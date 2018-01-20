@@ -8,13 +8,24 @@ sudo apt-get install -y nodejs
 make sure fiber is installed
 npm install fibers
 
-
-
 make sure you get the build-essentials
 sudo apt-get install -y build-essential
 
 make sure you have vhost
 npm install vhost
+
+install all the modules missing with npm install express,vhost,body-parser,node-json-rpc,bignumber.js, wait.for
+
+
+snakeoil problem check here
+https://github.com/sous-chefs/postgresql/issues/156
+or better here
+https://askubuntu.com/questions/49196/how-do-i-create-a-self-signed-ssl-certificate
+or even better here
+https://askubuntu.com/questions/51840/ssl-certification-is-missing
+or even better
+The program 'make-ssl-cert' is currently not installed. You can install it by typing:
+sudo apt-get install ssl-cert
 
 
 make sure you start with sudo:
@@ -35,7 +46,17 @@ edit ip in nodeIP.js and not response.js
 see:
 https://ethereum.stackexchange.com/questions/11188/etherwallet-3-4-1-on-private-chain-setup-having-404-error
 
-sudo node runLocalServer.js
+
+stop apache on bitnami
+https://community.bitnami.com/t/how-can-i-completely-disable-apache-and-use-node-js-on-port-80/10330/2
+
+edit ports in runLocalServer.js and runServer.js
+
+sudo node runLocalServer.js runServer.js respectively
 
 check if you get a 404 on http://localhost:port/api.mew
 
+sudo node runServer.js
+
+on bitnami make sure apache works right /80/443 SSL: Error: listen EADDRINUSE :::443
+https://community.bitnami.com/t/how-do-i-host-my-app-on-port-80/40977/7
