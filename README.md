@@ -60,3 +60,6 @@ sudo node runServer.js
 
 on bitnami make sure apache works right /80/443 SSL: Error: listen EADDRINUSE :::443
 https://community.bitnami.com/t/how-do-i-host-my-app-on-port-80/40977/7
+switch of bitnami apache altogether
+https://community.bitnami.com/t/how-can-i-completely-disable-apache-and-use-node-js-on-port-80/10330/2
+
