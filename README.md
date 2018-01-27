@@ -1,6 +1,6 @@
 # private_node
 
-make sure nodes is installed
+make sure nodes is installed best is if you install node 6
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
@@ -11,10 +11,10 @@ npm install fibers
 make sure you get the build-essentials
 sudo apt-get install -y build-essential
 
-make sure you havekvhost
-npm install vhost
 
-install all the modules missing with npm install express,vhost,body-parser,node-json-rpc,bignumber.js, wait.for
+install all the modules missing with 
+npm install express vhost body-parser node-json-rpc bignumber.js wait.for
+
 
 
 snakeoil problem check here
@@ -59,6 +59,8 @@ Not sure about this
 stop apache on bitnami
 https://community.bitnami.com/t/how-can-i-completely-disable-apache-and-use-node-js-on-port-80/10330/2
 
+generally on ubuntu check here https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
+
 edit ports in runLocalServer.js and runServer.js
 
 sudo node runLocalServer.js runServer.js respectively
@@ -71,4 +73,6 @@ on bitnami make sure apache works right /80/443 SSL: Error: listen EADDRINUSE ::
 https://community.bitnami.com/t/how-do-i-host-my-app-on-port-80/40977/7
 switch of bitnami apache altogether
 https://community.bitnami.com/t/how-can-i-completely-disable-apache-and-use-node-js-on-port-80/10330/2
+
+if you want to switch of apache https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
 
