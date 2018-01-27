@@ -76,3 +76,49 @@ https://community.bitnami.com/t/how-can-i-completely-disable-apache-and-use-node
 
 if you want to switch of apache https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
 
+
+-------------
+problems
+------------
+
+i get error 33 when I try to connect to custom node. Where can I find the source of this error?
+
+started the node on my machine like this
+
+nohup sudo geth --port 30304 --rpc --rpcaddr "0.0.0.0" --rpcport 8101 --rpccorsdomain "*" --rpcapi="eth,net,web3,utils" --datadir myDataDir --networkid 19720502 --bootnodes="enode:////cf2a1e3bb2cfe5a8aed058b609d6f4c844238e44425a7b24e422ce61cd971257859db2a8c4584acfe9bd65ffbec78d7db5cba14cbf32953f8f5c94e08135b20c@46.231.206.125:30304" &
+
+
+
+on my server
+I downloaded MEW 3.11.2 
+changed nodeIP.json and put in the IP adress 46.231.206.125 instead of x.x.x.x
+changed the ports from 8584 to 8101 in the file response.js 
+made sure ssl is installed https://sslanalyzer.comodoca.com/?url=46.231.206.125
+
+switched off apache (because port 80 was busy) using https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
+
+then I typed 
+
+sudo node runServer.js
+
+it runs without errors however if I try to connect via MEW custom node 
+https://46.231.206.125 port 8101 
+clicking on custom and networkid in eip1155
+
+I get 
+
+(error_33) Could not connect to the node. Refresh your page, try a different node (top-right corner), check your firewall settings. If custom node, check your configs.
+
+what can I do to find out what the problem could be?
+
+Here is some background information
+
+However if I do this locally on my machine it all works, i can access the local node when I do this:
+
+changed nodeIP.json and put in the IP Adress 127.0.0.1
+changed in response.js the ports to 8101
+sudo node runLocalServer.js 
+and accessing it by opening MEW locally and using http://127.0.0.1 port 8101 clicking on custom and typing in the correct networkid in eip1155
+
+
+
