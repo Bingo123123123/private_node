@@ -74,11 +74,39 @@ https://community.bitnami.com/t/how-do-i-host-my-app-on-port-80/40977/7
 switch of bitnami apache altogether
 https://community.bitnami.com/t/how-can-i-completely-disable-apache-and-use-node-js-on-port-80/10330/2
 
-if you want to switch of apache https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
+if you want to switch off apache https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
+
+---------
+Open SSL on 8101
+----------
+http://jeromejaglale.com/doc/ubuntu/https_ssl_custom_port
+http://www.zoharbabin.com/install-ssl-on-ubuntu-and-enable-https/
+
+
+---------------
+get a SSL certificate 
+---------------
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04
+or
+better this
+https://community.spiceworks.com/topic/1878858-installing-ssl-certificate-on-ubuntu-16-04
+
+
+Check which ports are open e.g. for ssl 
+netstat -ntlp | grep LISTEN
+
+if 8101 is not there try this to change ssl port
+https://stackoverflow.com/questions/34304022/change-ssl-port-of-apache2-server-err-ssl-protocol-error
+
+From https://www.digicert.com/csr-ssl-installation/ubuntu-server-with-apache2-openssl.htm
+
+sudo a2enmod ssl
+sudo a2ensite default-ssl
+sudo /etc/init.d/apache2 restart
 
 
 -------------
-problems
+problems https://askubuntu.com/questions/500175/how-can-i-open-port-443
 ------------
 
 i get error 33 when I try to connect to custom node. Where can I find the source of this error?
